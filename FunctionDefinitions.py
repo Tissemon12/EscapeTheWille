@@ -1,5 +1,7 @@
 import time as t
 
+
+# Denna funktionen välkommnar användaren till spelet
 def welcome():
     print("""
 __________________________________________
@@ -7,13 +9,22 @@ __________________________________________
 """)
 
 
+# Denna funktion ser om man spelat förut och vill se hur man spelar spelet
 def experience():
     played = input("Spelat förrut (ja/nej)? ").lower()
     if played == "ja":
         print("ok")
-        t.sleep(1)
-        print("Då startar det")
-        return
+        t.sleep(0.5)
+        tutorial = input("Vill du se hur man spelar spelet (ja/nej)?").lower()
+        if tutorial == "nej":
+            print("ok")
+            t.sleep(1)
+            print("Då startar spelet")
+            return
+        elif tutorial == "ja":
+            return tutorial
+        else:
+            print("Försök igen. Skriv ja/nej tack")
     elif played == "nej":
         tutorial = input("Vill du se hur man spelar spelet (ja/nej)?").lower()
         if tutorial == "nej":
@@ -29,6 +40,7 @@ def experience():
         print("Försök igen. Skriva ja/nej tack")    
 
 
+# Funktionen som visar hur man spelar spelet och vidare där ifrån
 def instructions(tutorial):
     if tutorial == "nej":
         return
@@ -73,10 +85,13 @@ def instructions(tutorial):
         print("Försök igen. Skriv ja/nej tack")
 
 
+# Denna funktionen visar i slutet av spelet om man dött, överlevt eller lämnat spelet
 def end(dead):
     if dead == "yes":
         print("Tyvär, Wille tog dig. Du förlorade")
     elif dead == "no":
         print("Grattis! Du flydde från Wille och klarade spelet")
+    elif dead == "left":
+        print("Spelet avslutas")
 
 
