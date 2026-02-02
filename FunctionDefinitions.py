@@ -10,12 +10,11 @@ __________________________________________
 
 
 # Denna funktion ser om man spelat förut och vill se hur man spelar spelet
-def experience():
-    played = input("Spelat förrut (ja/nej)? ").lower()
+def experience(played):
     if played == "ja":
         print("ok")
         t.sleep(0.5)
-        tutorial = input("Vill du se hur man spelar spelet (ja/nej)?").lower()
+        tutorial = input("Vill du se hur man spelar spelet (ja/nej)? ").lower()
         if tutorial == "nej":
             print("ok")
             t.sleep(1)
@@ -95,3 +94,61 @@ def end(dead):
         print("Spelet avslutas")
 
 
+# Funktionen som är introduktionen till spelet
+def start():
+    print("Du är i en fängelse cell")
+    t.sleep(2)
+    print("Varför?")
+    t.sleep(1)
+    print("Eftersom du är en tjuv som snor folks donuts")
+    t.sleep(3)
+    print("Krasch!")
+    t.sleep(1.5)
+    print("Du krossade ett fönster i cellen")
+    t.sleep(2)
+    print("När du landar kommer Wille ur utedasset. Han som fängslade dig!")
+    t.sleep(3)
+    print("Han har en donut som du tar")
+    t.sleep(2)
+    print("Varför?")
+    t.sleep(1)
+    print("Du är hungrig. Såklart!")
+    t.sleep(2)
+    print("Eftersom han är en vakt och du är en fånge så måste du fly!")
+    t.sleep(4)
+    print("Eftersom du tog hans donut så blir han rasande!")
+    t.sleep(3)
+    print("Om han tar dig så kommer du försvninna under mystiska omständigheter!")
+
+
+def scen1(choice):
+    if choice == "vänster":
+        print("Du träffar på en hund")
+        t.sleep(2)
+        print("Den är så ful och äcklig att du dör av en hjärtattack!")
+        return True
+    elif choice == "framåt":
+        print("Du springer framåt")
+        t.sleep(1)
+        print("Du hoppar på en en låda och tar sats över stänglset!")
+        t.sleep(3)
+        print("Precis när du kommer över så fastnar kalsongerna i stängslet")
+        t.sleep(3)
+        print("Du kommer inte loss och Wille hinner ta dig")
+        return False
+    elif choice == "höger":
+        print("Du springer iväg")
+        t.sleep(2)
+        print("Du hittar en pepsi flaska och ett bandage på ett bord som du tar")
+        t.sleep(0)
+        choice = input("Ska du distrahera Wille med pepsi flaskan eller dricka den tills senare (distrahera/dricka)").lower()
+        if choice == "dricka":
+            print("du dricker den, wille tar dig, du förlorar") #inte färdig
+            return False
+        elif choice == "distrahera":
+            print("du distraherar Wille och kommer undan") #inte färdig
+            return True
+        else:
+            print("Försök igen. Skriv (dricka/distrahera) tack!")
+    else:
+        print("Försök igen. Skriv (vänster/framåt/höger) tack!")
