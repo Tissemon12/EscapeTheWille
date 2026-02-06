@@ -1,8 +1,6 @@
 import FunctionDefinitions as fd
 
 fd.welcome()
+fd.experience(input("Har du spelat förut (ja/nej)? "))
 
-fd.instructions(fd.experience())
-
-
-test för github
+pullsaker
