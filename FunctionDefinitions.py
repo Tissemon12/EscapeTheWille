@@ -1,7 +1,5 @@
 import time as t
 
-# Start värden
-tutorial = "ja"
 
 # Denna funktionen välkommnar användaren till spelet
 def welcome():
@@ -144,13 +142,12 @@ def scen1(choice):
         t.sleep(2)
         print("Du hittar en pepsi flaska och ett bandage på ett bord som du tar")
         t.sleep(0)
-        choice = input("Ska du distrahera Wille med pepsi flaskan eller dricka den tills senare (distrahera/dricka) ").lower()
+        choice = input("Ska du distrahera Wille med pepsi flaskan eller dricka den tills senare (distrahera/dricka)").lower()
         if choice == "dricka":
             print("du dricker den, wille tar på dig, du förlorar") #inte färdig
             return False
         elif choice == "distrahera":
             print("du distraherar Wille och kommer undan") #inte färdig
-            t.sleep(0)
             print("Du går en stund och hittar en donut.")
             return True
         else:
@@ -160,7 +157,9 @@ def scen1(choice):
 
     
 def scen2(choice):
-    if choice == "förstöra":
+    t.time(0)
+    
+    if choice == "Äta":
         t.sleep(0)
         print("Wille blir arg och ringer Khalel för att bomba dig")
         return False
@@ -169,6 +168,10 @@ def scen2(choice):
         return True
     elif choice == "ta":
         print("du tog saken")
+        t.sleep(0)
+        print("Wille skjuter ditt ben.")
+        t.sleep(0)
+        print("Efter ett tag Wille blir trött och kan inte springa längre.")
         return True
     else:
         print("Försök igen")
@@ -224,5 +227,20 @@ def scen3(choice):
         print("Försök igen")
 
 
-
+def scen4(choice):
+    t.sleep(0)
+    print("Wille blir trött och kan inte springa längre.")
+    t.sleep(0)
+    heal = input("Vill du läka ditt ben? Nej/Ja").lower()
+    if heal == "nej":
+        print("Efter ett tag ville fångar dig")
+        t.sleep(0)
+        return False
+    elif heal == "ja":
+        print("Du kan gå igen")
+        return True
     
+    else: 
+        print("Försök igen, din jävla khanzir")
+
+
