@@ -10,15 +10,21 @@ scen1_value = fd.scen1(input("Ska du springa vänster, framåt över stängslet 
 if scen1_value == False:
     fd.end("yes")
 elif scen1_value == True:
-    scen2_value = fd.scen2(input("Ska du förstöra donuten, lämna den och dra eller ta den? (förstöra/lämna/ta) "))
+    scen2_value = fd.scen2(input("Ska du äta donuten, lämna den och dra eller ta den? (äta/lämna/ta) "))
     if scen2_value == False:
         fd.end("yes")
     elif scen2_value == True:
-        scen3_value = fd.scen3(input("Ska du ta pengarna eller springa vidare? (lämna/ta) "))
-        if scen3_value == False:
+        scen2_1_value = fd.scen2_1(input("Ska du ta pengarna eller springa vidare? (lämna/ta) "))
+        if scen2_1_value == False:
             fd.end("yes")
-        elif scen3_value == True:
-            pass
+        elif scen2_1_value == True:
+            scen2_1_1_value = fd.scen2_1_1(input("Ska du försöka klättra in i fönstret eller gå vidare? (klättra/gå)")).lower()
+            if scen2_1_1_value == False:
+                fd.end("yes")
+            elif scen2_1_1_value == True:
+                fd.end("no")
+            else:
+                print("Skriv rätt dummer")
         else:
             print("Skriv rätt dummer")
     else:
