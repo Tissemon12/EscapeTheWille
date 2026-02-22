@@ -153,14 +153,14 @@ def scen2(choice):
         return False
     elif choice == "lämna":
         print("Du går vidare och hittar pengar")
-        return True
+        return "lämna"
     elif choice == "ta":
         print("du tog saken")
         t.sleep(0)
         print("Wille skjuter ditt ben.")
         t.sleep(0)
         print("Efter ett tag Wille blir trött och kan inte springa längre.")
-        return True
+        return "ta"
     else:
         print("Försök igen")
 
@@ -191,7 +191,7 @@ def scen2_1_1(choice):
         print("Du kan inte klättra eftersom du skada ditt ben")
         t.sleep(0)
         heal = input("Ska du läka benet med bandaget du fick förut? (läka/klättra) ").lower()
-        if heal == "heal":
+        if heal == "läka":
             print("Du använde bandaget")
             t.sleep(0)
             print("Du klättrar och lyckades")
@@ -236,13 +236,12 @@ def scen2_1_2(choice):
 
 
 def scen2_2(choice):
-    heal = input("Vill du läka ditt ben? (ja/nej)").lower()
-    if heal == "ja":
+    if choice == "ja":
         print("Du kan gå igen")
         t.sleep(0)
         print("Du går vidare och hittar pengar")
         return True
-    elif heal == "nej":
+    elif choice == "nej":
         print("Efter ett tag ville fångar dig")
         t.sleep(0)
         return False
@@ -257,7 +256,7 @@ def scen2_2_1(choice):
         t.sleep(0)
         print("Du hittar ett fönster.")
         t.sleep(0)
-        return True
+        return "lämna"
 
     elif choice == "ta":
         print("Det var en fälla")
@@ -266,7 +265,7 @@ def scen2_2_1(choice):
         t.sleep(0)
         print("Du går vidare och hittar ett fönster")
         t.sleep(0)
-        return True
+        return "ta"
         
     else:
         print("Försök igen")
@@ -277,7 +276,7 @@ def scen2_2_1_1(choice):
         print("Du kan inte klättra eftersom du skada ditt ben")
         t.sleep(0)
         heal = input("Ska du läka benet med bandaget du fick förut? (läka/klättra) ").lower()
-        if heal == "heal":
+        if heal == "läka":
             print("Du använde bandaget")
             t.sleep(0)
             print("Du klättrar och lyckades")
@@ -301,6 +300,9 @@ def scen2_2_1_1(choice):
         t.sleep(0)
         print("Wille kommer och tar dig")
         return False
+    
+    else:
+        print("sri rätt")
 
 
 def scen2_2_1_2(choice):
