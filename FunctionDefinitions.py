@@ -130,7 +130,7 @@ def start():
     print("Om han tar dig så kommer du försvninna under mystiska omständigheter!")
 
 
-# Funktionen till din första choice
+# Funktionen till ditt första val. Gå vänster, framåt eller höger
 def scen1(choice):
     t.sleep(2)
     if choice == "vänster":
@@ -172,7 +172,8 @@ def scen1(choice):
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mvänster\033[94m/\033[92mframåt\033[94m/\033[92mhöger\033[94m) tack!")
 
-    
+
+# Här väljer du om du ska äta, lämna eller ta en donut.
 def scen2(choice):
     t.sleep(0)
     if choice == "äta":
@@ -196,6 +197,7 @@ def scen2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mäta\033[94m/\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
 
 
+# Här hittar du pengar, som du kan ta eller lämna.
 def scen2_1(choice):
     t.sleep(0)
     if choice == "lämna":
@@ -218,6 +220,7 @@ def scen2_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
 
 
+# Här hittar du ett fönster men ditt ben är skadad.
 def scen2_1_1(choice):
     t.sleep(0)
     if choice == "klättra":
@@ -236,6 +239,7 @@ def scen2_1_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
 
 
+# Här hittar du ett fönster
 def scen2_1_2(choice):
     t.sleep(0)
     if choice == "klättra":
@@ -271,6 +275,7 @@ def scen2_1_2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mKlättra\033[94m/\033[92mgå\033[94m) tack!")
 
 
+# Här kan du läka dig
 def scen2_2(choice):
     t.sleep(0)
     if choice == "läka":
@@ -288,6 +293,7 @@ def scen2_2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mläka\033[94m/\033[92mgå\033[94m) tack")
 
 
+# Du hittar pengar.
 def scen2_2_1(choice):
     t.sleep(0)
     if choice == "lämna":
@@ -310,6 +316,7 @@ def scen2_2_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
 
 
+# Du hittar ett fönster men du är skadad.
 def scen2_2_1_1(choice):
     t.sleep(0)
     if choice == "klättra":
@@ -345,6 +352,7 @@ def scen2_2_1_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
 
 
+# Du hittar ett fönster.
 def scen2_2_1_2(choice):
     t.sleep(0)
     if choice == "klättra":
