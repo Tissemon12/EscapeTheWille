@@ -14,11 +14,11 @@ scen2_2_1_1_win = ""
 scen2_2_1_2_win = ""
 
 # Färger
-# vit = text som programet skriver, förutom instruktioner (0)
-# röd = död (91)
-# Grön = val och vinst (92)
-# gul = det man skriver (93)
-# blå = skrev fel (94)
+# vit = text som programet skriver, förutom instruktioner (\033[0m)
+# röd = död (\033[91m)
+# Grön = val och vinst (\033[92m)
+# gul = det man skriver (\033[93m)
+# blå = skrev fel (\033[94m)
 
 
 # Denna funktionen välkommnar användaren till spelet
@@ -93,6 +93,7 @@ def instructions(tutorial):
 
 
 # Denna funktionen visar i slutet av spelet om man dött, överlevt eller lämnat spelet
+# Avslutar spelet också
 def end(dead):
     if dead == "yes":
         print("\033[91mTyvär, Wille tog dig. Du förlorade")
@@ -130,7 +131,7 @@ def start():
     print("Om han tar dig så kommer du försvninna under mystiska omständigheter!")
 
 
-# Funktionen till ditt första val. Gå vänster, framåt eller höger
+# Funktionen till ditt första val efter man krossat fönstret på sin cell. Kan välja (vänster/framåt/höger).
 def scen1(choice):
     t.sleep(2)
     if choice == "vänster":
@@ -173,7 +174,7 @@ def scen1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mvänster\033[94m/\033[92mframåt\033[94m/\033[92mhöger\033[94m) tack!")
 
 
-# Här väljer du om du ska äta, lämna eller ta en donut.
+# Funktionen för den andra scenen, det finns en donut på ett bord. Kan välja (äta/lämna/ta).
 def scen2(choice):
     t.sleep(2)
     if choice == "äta":
@@ -197,7 +198,7 @@ def scen2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mäta\033[94m/\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
 
 
-# Här hittar du pengar, som du kan ta eller lämna.
+# Funktionen för den tredje scenen om man valde att lämna donuten i scen2. Kan välja (lämna/ta).
 def scen2_1(choice):
     t.sleep(1)
     if choice == "lämna":
@@ -220,7 +221,7 @@ def scen2_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
 
 
-# Här hittar du ett fönster men ditt ben är skadad.
+# Funktionen för den fjärde funktionen om man valde att lämna pengarna i scen2_1. Kan välja (klättra/gå).
 def scen2_1_1(choice):
     t.sleep(1)
     if choice == "klättra":
@@ -239,7 +240,7 @@ def scen2_1_1(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
 
 
-# Här hittar du ett fönster
+# Funktionen för den fjärde funktionen om man valde att ta pengarna i scen2_1. Kan välja (klättra/gå).
 def scen2_1_2(choice):
     t.sleep(1)
     if choice == "klättra":
@@ -275,7 +276,7 @@ def scen2_1_2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mKlättra\033[94m/\033[92mgå\033[94m) tack!")
 
 
-# Här kan du läka dig
+# Funktionen för den tredje scenen om man valde att ta donuten i scen2. Kan välja (läka/gå)
 def scen2_2(choice):
     t.sleep(1)
     if choice == "läka":
@@ -293,7 +294,7 @@ def scen2_2(choice):
         print("\033[94mFörsök igen. Skriv (\033[92mläka\033[94m/\033[92mgå\033[94m) tack")
 
 
-# Du hittar pengar.
+# Funktionen för den fjärde scenen efter man har läkt sitt ben. kan välja (lämna/ta).
 def scen2_2_1(choice):
     t.sleep(1)
     if choice == "lämna":
