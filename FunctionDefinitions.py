@@ -33,9 +33,9 @@ __________________________________________
 def experience(played):
     if played == "ja":
         print("\033[0mok")
-        t.sleep(1)
+        t.sleep(0.5)
         print("Då startar spelet")
-        t.sleep(2)
+        t.sleep(1)
         return False
     elif played == "nej":
         tutorial = input("\033[0mVill du se hur man spelar spelet? (\033[92mja\033[0m/\033[92mnej) \033[93m").lower()
@@ -137,7 +137,7 @@ def scen1(choice):
         print("\033[0mDu träffar på en hund")
         t.sleep(2)
         print("Den är så ful och äcklig att du svimmar av en schock!")
-        t.sleep(0)
+        t.sleep(2)
         return False
     elif choice == "framåt":
         print("\033[0mDu springer framåt")
@@ -147,25 +147,25 @@ def scen1(choice):
         print("Precis när du kommer över så fastnar kalsongerna i stängslet")
         t.sleep(3)
         print("Du lyckas inte att komma loss")
-        t.sleep(0)
+        t.sleep(1)
         return False
     elif choice == "höger":
         print("\033[0mDu springer iväg")
         t.sleep(2)
         print("Du hittar en pepsi flaska och ett bandage på ett bord som du tar")
-        t.sleep(0)
+        t.sleep(2)
         choice = input("\033[0mSka du distrahera Wille med pepsi flaskan eller dricka den tills senare? (\033[92mdistrahera\033[0m/\033[92mdricka\033[0m) \033[93m").lower()
         if choice == "dricka":
             print("\033[0mDu dricker den och saktar ner") #inte färdig
-            t.sleep(0)
+            t.sleep(1)
             print("Wille kommer i fatt")
-            t.sleep(0)
+            t.sleep(1)
             return False
         elif choice == "distrahera":
             print("\033[0mDu distraherar Wille och kommer undan") #inte färdig
-            t.sleep(0)
+            t.sleep(1)
             print("Du går en stund och hittar en donut.")
-            t.sleep(0)
+            t.sleep(1)
             return True
         else:
             print("\033[94mFörsök igen. Skriv (\033[92mdricka\033[94m/\033[92mdistrahera\033[94m) tack!")
@@ -175,23 +175,23 @@ def scen1(choice):
 
 # Här väljer du om du ska äta, lämna eller ta en donut.
 def scen2(choice):
-    t.sleep(0)
+    t.sleep(2)
     if choice == "äta":
-        t.sleep(0)
+        t.sleep(1)
         print("\033[0mWille blir arg och ringer Khalel för att bomba dig")
-        t.sleep(0)
+        t.sleep(2)
         return False
     elif choice == "lämna":
         print("\033[0mDu går vidare och hittar pengar")
-        t.sleep(0)
+        t.sleep(1)
         return choice
     elif choice == "ta":
         print("\033[0mDu tog saken")
-        t.sleep(0)
+        t.sleep(1)
         print("Wille skjuter ditt ben.")
-        t.sleep(0)
+        t.sleep(1)
         print("Efter ett tag Wille blir trött och kan inte springa längre.")
-        t.sleep(0)
+        t.sleep(2)
         return choice
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mäta\033[94m/\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
@@ -199,21 +199,21 @@ def scen2(choice):
 
 # Här hittar du pengar, som du kan ta eller lämna.
 def scen2_1(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "lämna":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Du hittar ett fönster.")
-        t.sleep(0)
+        t.sleep(1)
         return choice
 
     elif choice == "ta":
         print("\033[0mDet var en fälla")
-        t.sleep(0)
+        t.sleep(1)
         print("Du skadar ditt ben.")
-        t.sleep(0)
+        t.sleep(1)
         print("Du går vidare och hittar ett fönster")
-        t.sleep(0)
+        t.sleep(1)
         return choice
         
     else:
@@ -222,18 +222,18 @@ def scen2_1(choice):
 
 # Här hittar du ett fönster men ditt ben är skadad.
 def scen2_1_1(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "klättra":
         print("\033[0mDu går ut")
-        t.sleep(0)
+        t.sleep(1)
         return True
     elif choice == "gå":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Du hamnar i en återvändsgränd")
-        t.sleep(0)
+        t.sleep(1)
         print("Wille kommer och tar dig")
-        t.sleep(0)
+        t.sleep(1)
         return False
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
@@ -241,24 +241,24 @@ def scen2_1_1(choice):
 
 # Här hittar du ett fönster
 def scen2_1_2(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "klättra":
         print("\033[0mDu kan inte klättra eftersom du skada ditt ben")
-        t.sleep(0)
+        t.sleep(2)
         heal = input("\033[0mSka du läka benet med bandaget du fick förut? (\033[92mläka\033[0m/\033[92mklättra\033[0m) \033[93m").lower()
-        t.sleep(0)
+        t.sleep(2)
         if heal == "läka":
             print("\033[0mDu använde bandaget")
-            t.sleep(0)
+            t.sleep(1)
             print("Du klättrar och lyckades")
-            t.sleep(0)
+            t.sleep(1)
             return True
 
         elif heal == "klättra":
             print("\033[0mDu använde inte bandagt")
-            t.sleep(0)
+            t.sleep(1)
             print("Du försöker klättra om och om igen men misslyckas")
-            t.sleep(0)
+            t.sleep(2)
             return False
 
         else:
@@ -266,9 +266,9 @@ def scen2_1_2(choice):
     
     elif choice == "gå":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Men du hammnar istället vid en återvändsgränd")
-        t.sleep(0)
+        t.sleep(1)
         return False
     
     else:
@@ -277,16 +277,16 @@ def scen2_1_2(choice):
 
 # Här kan du läka dig
 def scen2_2(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "läka":
         print("\033[0mDu kan gå igen")
-        t.sleep(0)
+        t.sleep(1)
         print("Du går vidare och hittar pengar")
-        t.sleep(0)
+        t.sleep(1)
         return True
     elif choice == "gå":
         print("\033[0mEfter ett tag ville fångar dig")
-        t.sleep(0)
+        t.sleep(1)
         return False
     
     else: 
@@ -295,21 +295,21 @@ def scen2_2(choice):
 
 # Du hittar pengar.
 def scen2_2_1(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "lämna":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Du hittar ett fönster.")
-        t.sleep(0)
+        t.sleep(1)
         return choice
 
     elif choice == "ta":
         print("\033[0mDet var en fälla")
-        t.sleep(0)
+        t.sleep(1)
         print("Du skadar ditt ben.")
-        t.sleep(0)
+        t.sleep(1)
         print("Du går vidare och hittar ett fönster")
-        t.sleep(0)
+        t.sleep(1)
         return choice
         
     else:
@@ -318,24 +318,24 @@ def scen2_2_1(choice):
 
 # Du hittar ett fönster men du är skadad.
 def scen2_2_1_1(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "klättra":
         print("\033[0mDu kan inte klättra eftersom du skada ditt ben")
-        t.sleep(0)
+        t.sleep(2)
         heal = input("\033[0mSka du läka benet med bandaget du fick förut? (\033[92mläka\033[0m/\033[92mklättra\033[0m) \033[93m").lower()
-        t.sleep(0)
+        t.sleep(2)
         if heal == "läka":
             print("\033[0mDu använde bandaget")
-            t.sleep(0)
+            t.sleep(1)
             print("Du klättrar och lyckades")
-            t.sleep(0)
+            t.sleep(1)
             return True
 
         elif heal == "klättra":
             print("\033[0mDu använde inte bandagt")
-            t.sleep(0)
+            t.sleep(1)
             print("Du försöker klättra om och om igen men misslyckas")
-            t.sleep(0)
+            t.sleep(1.5)
             return False
 
         else:
@@ -343,9 +343,9 @@ def scen2_2_1_1(choice):
     
     elif choice == "gå":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Men du hammnar istället vid en återvändsgränd")
-        t.sleep(0)
+        t.sleep(1.5)
         return False
     
     else:
@@ -354,16 +354,16 @@ def scen2_2_1_1(choice):
 
 # Du hittar ett fönster.
 def scen2_2_1_2(choice):
-    t.sleep(0)
+    t.sleep(1)
     if choice == "klättra":
         print("\033[0mDu går ut")
-        t.sleep(0)
+        t.sleep(1)
         return True
     elif choice == "gå":
         print("\033[0mDu går vidare")
-        t.sleep(0)
+        t.sleep(1)
         print("Du hamnar i en återvändsgränd")
-        t.sleep(0)
+        t.sleep(1.1)
         return False
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
