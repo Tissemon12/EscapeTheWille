@@ -6,7 +6,7 @@ import FunctionDefinitions as fd
 # Börjar med att skriva ut titeln på spelet. Escape The Wille.
 fd.welcome()
 # Här frågar man om spelaren spelat förut och vissar instruktioner om man inte gjort det.
-# While loop för att man ska kunna skriva om om man skrev fel.
+# While loop för att man ska kunna skriva om, om man skrev fel.
 while fd.not_played == True:
     # Frågar användaren om de spelat förrut. Om inte, frågas om de vill se instruktioner.
     played_status = fd.experience(input("\033[0mHar du spelat spelet förutt? (\033[92mja\033[0m/\033[92mnej\033[0m) \033[93m"))
@@ -18,7 +18,7 @@ while fd.not_played == True:
     elif played_status == False:
         break
 
-# Vissar intro scenen för spelet är man flyr fängelset.
+# Vissar intro scenen för spelet när man flyr fängelset.
 fd.start()
 
 # ------Generell spelstruktur------
@@ -43,7 +43,7 @@ while fd.scen1_win == "":
 # Detta är om man sprang höger i förra scenen. Kan välja (äta/lämna/ta).
 if fd.scen1_win == True:
     while fd.scen2_win == "":
-        scen2_value = fd.scen2(input("\033[0mSka du äta donuten, lämna den och dra eller ta den? (\033[92mäta\033[0m/\033[92mlämna\033[0m/\033[92mta\033[0m) \033[93m").lower())
+        scen2_value = fd.scen2(input("\033[0mSka du förstöra ficklampan, lämna den och dra eller ta den? (\033[92mförstöra\033[0m/\033[92mlämna\033[0m/\033[92mta\033[0m) \033[93m").lower())
         if scen2_value == False:
             fd.end("yes")
         elif scen2_value == "lämna":
@@ -84,7 +84,7 @@ if fd.scen2_1_win == "ta":
             fd.end("no")
 
 
-# Detta är om man tog donuten i scen2. Kan välja (läka/gå).
+# Detta är om man tog ficklampan i scen2. Kan välja (läka/gå).
 if fd.scen2_win == "ta":
     while fd.scen2_2_win == "":
         scen2_2_value = fd.scen2_2(input("\033[0mSka du läka ditt ben eller gå vidare? (\033[92mläka\033[0m/\033[92mgå\033[0m) \033[93m").lower())
@@ -97,28 +97,68 @@ if fd.scen2_win == "ta":
 # Detta är om man klarade förra scenen. Kan välja (lämna/ta). 
 if fd.scen2_2_win == True:
     while fd.scen2_2_1_win == "":
-        scen2_2_1_value = fd.scen2_2_1(input("\033[0mSka du ta pengarna eller gå vidare? (\033[92mlämna\033[0m/\033[92mta\033[0m) \033[93m").lower())
-        if scen2_2_1_value == "lämna":
-            fd.scen2_2_1_win = "lämna"
-        elif scen2_2_1_value == "ta":
-            fd.scen2_2_1_win = "ta"
+        scen2_2_1_value = fd.scen2_2_1(input("\033[0mSka du gå in genom porten eller vidare? (\033[92min\033[0m/\033[92mvidare\033[0m) \033[93m").lower())
+        if scen2_2_1_value == "in":
+            fd.scen2_2_1_win = "in"
+        elif scen2_2_1_value == "vidare":
+            fd.scen2_2_1_win = "vidare"
 
 
 # Detta är om man tog pengarna i förra scenen. Kan välja (klättra/gå)
-if fd.scen2_2_1_win == "ta":
+if fd.scen2_2_1_win == "in":
     while fd.scen2_2_1_1_win == "":
-        scen2_2_1_1_value = fd.scen2_2_1_1(input("\033[0mSka du klättra in i fönstret eller gå vidare? (\033[92mklättra\033[0m/\033[92mgå\033[0m) \033[93m").lower())
-        if scen2_2_1_1_value == False:
-            fd.end("yes")
-        elif scen2_2_1_1_value == True:
-            fd.end("no")
+        scen2_2_1_1_value = fd.scen2_2_1_1(input("\033[0mSka du ta vatten flaskan eller lämna, ut genom porten? (\033[92mta\033[0m/\033[92mlämna\033[0m) \033[93m").lower())
+        if scen2_2_1_1_value == "ta":
+            fd.scen2_2_1_1_win = "ta"
+        elif scen2_2_1_1_value == "lämna":
+            fd.scen2_2_1_1_win = "lämna"
 
 
 # Detta är om man lämnade pengarna i scen2_2_1. Kan välja (klättra/gå).
-if fd.scen2_2_1_win == "lämna":
+if fd.scen2_2_1_win == "vidare":
     while fd.scen2_2_1_2_win == "":
-        scen2_2_1_2_value = fd.scen2_2_1_2(input("\033[0mSka du klättra in i fönstret eller gå vidare? (\033[92mklättra\033[0m/\033[92mgå\033[0m) \033[93m").lower())
+        scen2_2_1_2_value = fd.scen2_2_1_2(input("\033[0mSka du ta vänster eller höger i korsningen? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m").lower())
         if scen2_2_1_2_value == False:
             fd.end("yes")
         elif scen2_2_1_2_value == True:
+            fd.scen2_2_1_2_win = True
+
+
+# kommentar
+if fd.scen2_2_1_1_win == "ta":
+    while fd.scen2_2_1_1_1_win == "":
+        scen2_2_1_1_1_value = fd.scen2_2_1_1_1(input("\033[0mSka du ta dörren åt vänster eller trapporna åt höger? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m"))
+        if scen2_2_1_1_1_value == False:
+            fd.end("yes")
+        elif scen2_2_1_1_1_value == True:
+            fd.scen2_2_1_1_1_win = True
+
+
+# kommentar
+if fd.scen2_2_1_1_win == "lämna":
+    while fd.scen2_2_1_2_win == "":
+        scen2_2_1_2_value = fd.scen2_2_1_2(input("\033[0mSka du ta vänster eller höger i korsningen? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m").lower())
+        if scen2_2_1_2_value == False:
+            fd.end("yes")
+        elif scen2_2_1_2_value == True:
+            fd.scen2_2_1_2_win = True
+
+
+# kommentar
+if fd.scen2_2_1_2_win == True:
+    while fd.scen2_2_1_2_1_win == "":
+        scen2_2_1_2_1_value = fd.scen2_2_1_2_1(input("\033[0mSka du klättra in genom fönstret eller springa vidare? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m").lower())
+        if scen2_2_1_2_1_value == False:
+            fd.end("yes")
+        elif scen2_2_1_2_1_value == True:
+            fd.end("no")
+
+
+# kommentar
+if fd.scen2_2_1_1_1_win == True:
+    while fd.scen2_2_1_1_1_1_win == "":
+        scen2_2_1_1_1_1_value = fd.scen2_2_1_1_1_1(input("\033[0mSka du hopp ut genom fönstret åt höger eller springa vidare? (\033[92mhöger\033[0m/\033[92mvidare\033[0m) \033[93m").lower())
+        if scen2_2_1_1_1_1_value == False:
+            fd.end("yes")
+        elif scen2_2_1_1_1_1_value == True:
             fd.end("no")
