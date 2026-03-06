@@ -41,6 +41,7 @@ def experience(played):
         print("Då startar spelet")
         t.sleep(2)
         return False
+    
     elif played == "nej":
         tutorial = input("\033[0mVill du se hur man spelar spelet? (\033[92mja\033[0m/\033[92mnej) \033[93m").lower()
         if tutorial == "nej":
@@ -49,12 +50,17 @@ def experience(played):
             print("Då startar spelet")
             t.sleep(2)
             return False
+        
         elif tutorial == "ja":
             return tutorial
+        
         else:
             print("\033[94mFörsök igen. Skriv (\033[92mja\033[94m/\033[92mnej)\033[94m tack")
+            return(experience(input("\033[0mHar du spelat spelet förutt? (\033[92mja\033[0m/\033[92mnej\033[0m) \033[93m").lower()))
+        
     else:
-        print("\033[94mFörsök igen. Skriv (\033[92mja\033[94m/\033[92mnej)\033[94m tack")    
+        print("\033[94mFörsök igen. Skriv (\033[92mja\033[94m/\033[92mnej)\033[94m tack")
+        return (experience(input("\033[0mHar du spelat spelet förutt? (\033[92mja\033[0m/\033[92mnej\033[0m) \033[93m").lower()))   
 
 
 # Funktionen som visar hur man spelar spelet och vidare där ifrån
@@ -88,10 +94,12 @@ def instructions(tutorial):
         t.sleep(1)
         print("Då startar det")
         t.sleep(2)
+
     elif done == "nej":
         print("\033[0mOk. Då kommer rutan igen")
         t.sleep(1.5)
         return instructions(tutorial)
+    
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mja\033[0m/\033[92mnej\033[94m) tack")
         return instructions(tutorial)
@@ -185,9 +193,11 @@ def scen1(choice):
         
         else:
             print("\033[94mFörsök igen. Skriv (\033[92mdistrahera\033[94m/\033[92mdricka\033[94m) tack!")
+            return (scen1(input("\033[0mSka du springa vänster, framåt över stängslet eller höger? (\033[92mvänster\033[0m/\033[92mframåt\033[0m/\033[92mhöger\033[0m) \033[93m").lower()))
 
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mvänster\033[94m/\033[92mframåt\033[94m/\033[92mhöger\033[94m) tack!")
+        return (scen1(input("\033[0mSka du springa vänster, framåt över stängslet eller höger? (\033[92mvänster\033[0m/\033[92mframåt\033[0m/\033[92mhöger\033[0m) \033[93m").lower()))
 
 
 # Funktionen för den andra scenen, det finns en donut på ett bord. Kan välja (äta/lämna/ta).
@@ -225,6 +235,7 @@ def scen2(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mäta\033[94m/\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
+        scen2(input("\033[0mSka du förstöra ficklampan, lämna den och dra eller ta den? (\033[92mförstöra\033[0m/\033[92mlämna\033[0m/\033[92mta\033[0m) \033[93m").lower())
 
 
 # Funktionen för den tredje scenen om man valde att lämna ficklampan i scen2. Kan välja (lämna/ta).
@@ -254,6 +265,7 @@ def scen2_1(choice):
         
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mlämna\033[94m/\033[92mta\033[94m) tack!")
+        return (scen2_1(input("\033[0mSka du ta pengarna eller springa vidare? (\033[92mlämna\033[0m/\033[92mta\033[0m) \033[93m").lower()))
 
 
 # Funktionen för den fjärde funktionen om man valde att lämna pengarna i scen2_1. Kan välja (klättra/gå).
@@ -281,6 +293,7 @@ def scen2_1_1(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mgå\033[94m) tack!")
+        return (scen2_1_1(input("\033[0mSka du försöka klättra in i fönstret eller gå vidare? (\033[92mklättra\033[0m/\033[92mgå\033[0m) \033[93m").lower()))
 
 
 # Funktionen för den fjärde funktionen om man valde att ta pengarna i scen2_1. Kan välja (klättra/gå).
@@ -317,6 +330,7 @@ def scen2_1_2(choice):
 
         else:
             print("\033[94mFörsök igen. Skriv (\033[92mläka\033[94m/\033[92mklättra\033[92m) tack!")
+            return (scen2_1_2(input("\033[0mSka du försöka klättra in i fönstret eller gå vidare? (\033[92mklättra\033[0m/\033[92mgå\033[0m) \033[93m").lower()))
     
     elif choice == "gå":
         print("\033[0mDu haltar vidare runt alla hörnen")
@@ -329,6 +343,7 @@ def scen2_1_2(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mKlättra\033[94m/\033[92mgå\033[94m) tack!")
+        return (scen2_1_2(input("\033[0mSka du försöka klättra in i fönstret eller gå vidare? (\033[92mklättra\033[0m/\033[92mgå\033[0m) \033[93m").lower()))
 
 
 # Funktionen för den tredje scenen om man valde att ta ficklampan i scen2. Kan välja (läka/gå)
@@ -356,6 +371,7 @@ def scen2_2(choice):
     
     else: 
         print("\033[94mFörsök igen. Skriv (\033[92mläka\033[94m/\033[92mgå\033[94m) tack")
+        return (scen2_2(input("\033[0mSka du läka ditt ben eller gå vidare? (\033[92mläka\033[0m/\033[92mgå\033[0m) \033[93m").lower()))
 
 
 # Funktionen för den fjärde scenen efter man har läkt sitt ben. kan välja (lämna/ta).
@@ -381,6 +397,7 @@ def scen2_2_1(choice):
         
     else:
         print("\033[94mFörsök igen. Skriv (\033[92min\033[94m/\033[92mvidare\033[94m) tack!")
+        return (scen2_2_1(input("\033[0mSka du gå in genom porten eller vidare? (\033[92min\033[0m/\033[92mvidare\033[0m) \033[93m").lower()))
 
 
 # Du hittar ett fönster men du är skadad.
@@ -416,6 +433,7 @@ def scen2_2_1_1(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mta\033[94m/\033[92mlämna\033[94m) tack!")
+        return (scen2_2_1_1(input("\033[0mSka du ta vatten flaskan eller lämna, ut genom porten? (\033[92mta\033[0m/\033[92mlämna\033[0m) \033[93m").lower()))
 
 
 # Du hittar ett fönster.
@@ -443,6 +461,7 @@ def scen2_2_1_2(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mvänster\033[94m/\033[92mhöger\033[94m) tack!")
+        return (scen2_2_1_2(input("\033[0mSka du ta vänster eller höger i korsningen? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m").lower()))
 
 
 def scen2_2_1_2_1(choice):
@@ -464,7 +483,8 @@ def scen2_2_1_2_1(choice):
         return False
     
     else:    
-        print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mvidare\033[94m) tack!")    
+        print("\033[94mFörsök igen. Skriv (\033[92mklättra\033[94m/\033[92mvidare\033[94m) tack!")
+        return (scen2_2_1_2_1(input("\033[0mSka du klättra in genom fönstret eller springa vidare? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m").lower()))
 
 
 # vänster genom dörren/höger upp frö trammap
@@ -496,6 +516,7 @@ def scen2_2_1_1_1(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mvänster\033[94m/\033[92mhöger\033[94m) tack!")
+        return (scen2_2_1_1_1(input("\033[0mSka du ta dörren åt vänster eller trapporna åt höger? (\033[92mvänster\033[0m/\033[92mhöger\033[0m) \033[93m")))
 
 
 
@@ -525,3 +546,4 @@ def scen2_2_1_1_1_1(choice):
     
     else:
         print("\033[94mFörsök igen. Skriv (\033[92mhöger\033[94m/\033[92mvidare\033[94m) tack!")
+        return (scen2_2_1_1_1_1(input("\033[0mSka du hopp ut genom fönstret åt höger eller springa vidare? (\033[92mhöger\033[0m/\033[92mvidare\033[0m) \033[93m").lower()))
