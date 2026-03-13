@@ -39,14 +39,14 @@ __________________________________________
 # se instruktionerna. Om de vill se instruktionerna så visas de, om inte så startas spelet.
 def experience(played):
     if played == "ja":
-        print("\033[0mok")
+        print("\033[0mKk")
         t.sleep(2)
         return False
     
     elif played == "nej":
         tutorial = input("\033[0mVill du se hur man spelar spelet? (\033[92mja\033[0m/\033[92mnej) \033[93m").lower()
         if tutorial == "nej":
-            print("\033[0mok")
+            print("\033[0mOk")
             t.sleep(2)
             return False
         
