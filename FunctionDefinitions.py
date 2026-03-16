@@ -39,7 +39,7 @@ __________________________________________
 # se instruktionerna. Om de vill se instruktionerna så visas de, om inte så startas spelet.
 def experience(played):
     if played == "ja":
-        print("\033[0mKk")
+        print("\033[0mOk")
         t.sleep(2)
         return False
     
